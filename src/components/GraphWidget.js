@@ -55,7 +55,9 @@ class GraphWidget extends Component {
 
     // Update the state based on changing props
     componentWillReceiveProps(nextProps) {
-        
+        if (this.props.data !== nextProps.data){
+            this.generateDatasets(nextProps);
+        }
     }
 
     //Convert the data received in props to a format the graphing component likes
@@ -63,7 +65,16 @@ class GraphWidget extends Component {
         let datasets = [];
 
         //Create a dataset object that Chart.js to understand
-        
+        props.data.forEach(function (data) {
+            datasets.push({
+                label: data.label,
+                data: data.data,
+                fill: false,
+                borderColor: data.color,
+                pointRadius: 0,
+                pointHitRadius: 10
+            });
+        }, this);
 
         //Let the React wrapper for Chart.js update the view
         this.setState({

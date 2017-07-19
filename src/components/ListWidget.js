@@ -12,7 +12,14 @@ class ListWidget extends Component {
     //Sort items in descending order
     sortListItems() {
         let sortedItems = this.props.listItems.slice();
-        return sortedItems;
+        return sortedItems.sort((a, b) => {
+            if (a.value > b.value) {
+                return -1;
+            } else if (a.value < b.value) {
+                return 1;
+            }
+            return 0;
+        });
     }
 
     // Decide whether to show widget

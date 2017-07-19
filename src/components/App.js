@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import NumberWidgetContainer from '../components/NumberWidgetContainer';
 import ListWidgetContainer from '../components/ListWidgetContainer';
+import GraphWidgetContainer from '../components/GraphWidgetContainer';
 
 // Import widgets being used in this component
 
@@ -16,6 +17,10 @@ class App extends Component {
                   heading="Top Ticket Answerers"
                   rowspan={3} />
                 <NumberWidgetContainer href='http://localhost:3001/tickets/open' heading="Open ticket total" />
+              <GraphWidgetContainer
+                href="http://localhost:3001/tickets/progression"
+                heading="Tickets Over Time"
+                colspan={2} rowspan={2} />
             </div>
         );
     }
