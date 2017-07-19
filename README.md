@@ -1,5 +1,5 @@
 # React Dashboard
-> Simple react dashboard for study puposes
+> Simple react dashboard for study purposes
 
 ## How-to run
 
