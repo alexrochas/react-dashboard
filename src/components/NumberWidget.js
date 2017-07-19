@@ -26,7 +26,14 @@ class NumberWidget extends Component {
     // Decide whether to show a progress bar
     showProgress() {
         // Only show if the required min, max and value props are supplied
-        
+        if (this.props.min !== undefined &&
+            this.props.max !== undefined &&
+            this.props.value !== undefined) {
+            return <Progress min={this.props.min}
+            max={this.props.max}
+            value={this.props.value} />;
+        }
+        return null;
     }
 
     render() {

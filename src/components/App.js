@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import Widget from '../components/Widget';
-import NumberDisplay from '../components/NumberDisplay';
+import NumberWidget from '../components/NumberWidget';
 
 // Import widgets being used in this component
 
@@ -11,9 +10,7 @@ class App extends Component {
     render() {
         return (
             <div className="App">
-                <Widget heading="Open ticket total">
-                    <NumberDisplay max={9} value={5} />
-                </Widget>
+                <NumberWidget heading="Open ticket total" max={9} value={5} />
             </div>
         );
     }
