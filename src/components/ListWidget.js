@@ -30,7 +30,10 @@ class ListWidget extends Component {
 
         return (
             <ListDisplay>
-                {/* Add a ListItem for each piece of data */}
+                {sortedItems.map((item, index) =>
+                <ListItem key={item.label}
+                    label={item.label} value={item.value}
+                    min={min} max={max} />)}
             </ListDisplay>
         );
     }
