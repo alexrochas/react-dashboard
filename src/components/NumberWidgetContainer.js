@@ -25,16 +25,27 @@ class NumberWidgetContainer extends Component {
 
     // Fetch data when the component is added
     componentDidMount() {
-        
+        this.getData().then(_ => {
+            this.interval =
+                setInterval(this.getData, 60000);
+        });
     }
 
     // Fetch new data
     getData() {
         // Tell the Widget component we're currently loading
-        
+        this.setState({ loading: true });
 
         // Fetch data
-        
+        return axios.get(this.props.href)
+            .then(resp => {
+                this.setState({
+                    loading: false,
+                    min: resp.data.min,
+                    max: resp.data.max,
+                    value: resp.data.value
+                });
+            })
     }
 
     render() {

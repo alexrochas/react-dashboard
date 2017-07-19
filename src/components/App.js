@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import NumberWidget from '../components/NumberWidget';
+import NumberWidgetContainer from '../components/NumberWidgetContainer';
 
 // Import widgets being used in this component
 
@@ -10,7 +10,7 @@ class App extends Component {
     render() {
         return (
             <div className="App">
-                <NumberWidget heading="Open ticket total" max={9} value={5} />
+                <NumberWidgetContainer href='http://localhost:3001/tickets/open' heading="Open ticket total" />
             </div>
         );
     }
