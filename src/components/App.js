@@ -21,6 +21,16 @@ class App extends Component {
                 href="http://localhost:3001/tickets/progression"
                 heading="Tickets Over Time"
                 colspan={2} rowspan={2} />
+              <NumberWidgetContainer href="
+                http://localhost:3001/tickets/today"
+                heading="Tickets Opened Today" />
+              <NumberWidgetContainer href="
+                http://localhost:3001/tickets/urgent"
+                heading="Tickets Marked 'Urgent'" />
+              <NumberWidgetContainer href="
+                http://localhost:3001/stats/response"
+                heading="4 Hour Response %"
+              colspan={2}/>
             </div>
         );
     }
